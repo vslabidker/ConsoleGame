@@ -1,22 +1,20 @@
 /**
-  Клас Player:
-  Реалізує інтерфейс ComputerInteraction для взаємодії з комп'ютером.
-  Містить метод tryNumber(int guessedNumber), який використовує метод checkGuess класу Computer
-  для перевірки спроби гравця вгадати число.
+ Клас Player:
+ Взаємодіє з комп'ютером через інтерфейс IComputerInteraction.
+ Містить метод tryNumber для перевірки спроби гравця вгадати число.
  */
 
-public class Player implements ComputerInteraction
+public class Player
 {
-    private final Computer computer;
+    private final IComputerInteraction computerInteraction;
 
-    public Player(Computer computer)
+    public Player(IComputerInteraction computerInteraction)
     {
-        this.computer = computer;
+        this.computerInteraction = computerInteraction;
     }
 
-    @Override
     public TryResult tryNumber(int guessedNumber)
     {
-        return computer.checkGuess(guessedNumber);
+        return computerInteraction.tryNumber(guessedNumber);
     }
 }
