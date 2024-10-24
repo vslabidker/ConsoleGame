@@ -16,7 +16,6 @@ public class Computer implements IComputerInteraction
         this.secretNumber = random.nextInt(100) + 1; // Число від 1 до 100
     }
 
-    @Override
     public TryResult tryNumber(int guessedNumber)
     {
         if (guessedNumber == secretNumber)
