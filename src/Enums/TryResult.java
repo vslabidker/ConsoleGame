@@ -1,5 +1,7 @@
+package Enums;
+
 /**
-  Enum TryResult:
+  Enum Enums.TryResult:
   Описує результат спроби в грі "Вгадай число".
   Можливі результати:
   - SUCCESS: Число вгадане успішно.
