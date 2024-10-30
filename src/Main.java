@@ -9,18 +9,19 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Выберите игру: 1 - Угадай число, 2 - Угадай строку");
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите ваше имя: ");
+        String name = scanner.nextLine();
+        System.out.println("Выберите игру: 1 - Угадай число, 2 - Угадай строку");
         int choice = scanner.nextInt();
-        scanner.nextLine();
 
         if (choice == 1)
         {
             NumberGame game = new NumberGame();
             ConsoleSource<Integer> consoleSource = new ConsoleSource<Integer>();
-            HumanPlayer<Integer> player = new HumanPlayer<Integer>( "Player 1");
+            HumanPlayer<Integer> player = new HumanPlayer<Integer>(name);
 
-            System.out.println("Добро пожаловать в игру: Угадай число," + player.getName());
+            System.out.println("Добро пожаловать в игру 'Угадай число', " + player.getName());
             game.play(player, consoleSource, game.getGameData());
 
         }
@@ -28,9 +29,9 @@ public class Main
         {
             StringGame game = new StringGame(5);
             ConsoleSource<String> consoleSource = new ConsoleSource<String>();
-            HumanPlayer<String> player = new HumanPlayer<String>( "Player 1");
+            HumanPlayer<String> player = new HumanPlayer<String>(name);
 
-            System.out.println("Добро пожаловать в игру: Угадай строку," + player.getName());
+            System.out.println("Добро пожаловать в игру 'Угадай строку', " + player.getName());
             game.play(player, consoleSource, game.getGameData());
         }
         else
