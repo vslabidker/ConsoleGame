@@ -1,4 +1,3 @@
-import Enums.TryResult;
 import Game.NumberGame;
 import Game.StringGame;
 import Player.HumanPlayer;
@@ -11,52 +10,25 @@ public class Main {
         System.out.println("Выберите игру: 1 - Угадай число, 2 - Угадай строку");
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
+        scanner.nextLine(); // Чтобы очистить буфер после nextInt()
 
-        if (choice == 1)
-        {
-            NumberGame game = new NumberGame();
-            int targetNumber = game.getGameData();
+        if (choice == 1) {
+            NumberGame game = new NumberGame(); // Игра с числом
             ConsoleSource<Integer> consoleSource = new ConsoleSource<Integer>();
             HumanPlayer<Integer> player = new HumanPlayer<Integer>(1, "Игрок");
 
             System.out.println("Добро пожаловать в игру 'Угадай число'!");
-            playGame(player, consoleSource, targetNumber);
+            game.play(player, consoleSource, game.getGameData()); // Используем game.play()
 
-        }
-        else if (choice == 2)
-        {
-            StringGame game = new StringGame(5);
-            String targetString = game.getGameData();
+        } else if (choice == 2) {
+            StringGame game = new StringGame(5); // Игра со строкой длиной 5 символов
             ConsoleSource<String> consoleSource = new ConsoleSource<String>();
             HumanPlayer<String> player = new HumanPlayer<String>(1, "Игрок");
 
             System.out.println("Добро пожаловать в игру 'Угадай строку'!");
-            playGame(player, consoleSource, targetString);
-        }
-        else
-        {
+            game.play(player, consoleSource, game.getGameData()); // Используем game.play()
+        } else {
             System.out.println("Неверный выбор игры.");
         }
-    }
-
-    private static <T> void playGame(HumanPlayer<T> player, ConsoleSource<T> consoleSource, T targetData)
-    {
-        TryResult result;
-        do
-        {
-            result = player.tryGuess(consoleSource, targetData);
-            switch (result)
-            {
-                case SUCCESS:
-                    System.out.println("Поздравляю! Вы угадали!");
-                    break;
-                case TOO_HIGH:
-                    System.out.println("Ваше значение слишком велико!");
-                    break;
-                case TOO_LOW:
-                    System.out.println("Ваше значение слишком мало!");
-                    break;
-            }
-        } while (result != TryResult.SUCCESS);
     }
 }

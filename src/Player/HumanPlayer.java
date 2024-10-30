@@ -44,7 +44,6 @@ public class HumanPlayer<T> implements Player<T>
             }
             else
             {
-                System.out.println("Неправильная строка. Попробуйте снова.");
                 return TryResult.TOO_LOW;
             }
         }
