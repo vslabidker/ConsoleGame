@@ -5,12 +5,12 @@ import Source.Source;
 
 public class HumanPlayer<T> implements Player<T>
 {
-    private final int id;
+    private int id = 0;
     private final String name;
 
-    public HumanPlayer(int id, String name)
+    public HumanPlayer(String name)
     {
-        this.id = id;
+        ++this.id;
         this.name = name;
     }
 
