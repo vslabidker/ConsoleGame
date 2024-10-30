@@ -1,8 +1,8 @@
 package Game;
 
 import Enums.TryResult;
-import Player.HumanPlayer;
-import Source.ConsoleSource;
+import Player.*;
+import Source.*;
 
 public class NumberGame implements Game<Integer>
 {
@@ -20,7 +20,7 @@ public class NumberGame implements Game<Integer>
     }
 
     @Override
-    public void play(HumanPlayer<Integer> player, ConsoleSource<Integer> source, Integer targetData)
+    public void play(Player player, Source<Integer> source, Integer targetData)
     {
         TryResult result;
         do

@@ -1,8 +1,8 @@
 package Game;
 
 import Enums.TryResult;
-import Player.HumanPlayer;
-import Source.ConsoleSource;
+import Player.*;
+import Source.*;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class StringGame implements Game<String>
     }
 
     @Override
-    public void play(HumanPlayer<String> player, ConsoleSource<String> source, String targetData)
+    public void play(Player player, Source<String> source, String targetData)
     {
         TryResult result;
         do

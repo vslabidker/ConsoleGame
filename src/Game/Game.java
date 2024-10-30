@@ -1,10 +1,10 @@
 package Game;
 
-import Player.HumanPlayer;
-import Source.ConsoleSource;
+import Player.*;
+import Source.*;
 
 public interface Game<T>
 {
     T getGameData();
-    void play(HumanPlayer<T> player, ConsoleSource<T> source, T targetData);
+    void play(Player player, Source<T> source, T targetData);
 }
