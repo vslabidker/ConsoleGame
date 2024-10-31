@@ -2,6 +2,7 @@
 Гра “Вгадай число”:
 Опис: Комп’ютер загадує число від 1 до 100, а гравець намагається його відгадати. Після кожної спроби комп’ютер повідомляє, чи число більше або менше загаданого.
 
-![image](https://github.com/user-attachments/assets/5dad2275-7303-4922-a5f0-cc25ad1b6d85)
+![image](https://github.com/user-attachments/assets/b72494da-d8dc-4eb9-a359-a640e0cd9d6f)
+
 
 
