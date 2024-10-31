@@ -1,10 +1,8 @@
 package Game;
 
 import Enums.TryResult;
-import Player.*;
+import GameProcessing.StringGameProcessing;
 import Source.*;
-
-import java.util.Random;
 
 public class StringGame implements Game<String>
 {
@@ -22,12 +20,13 @@ public class StringGame implements Game<String>
     }
 
     @Override
-    public void play(Player player, Source<String> source, String targetData)
+    public void play(Source<String> source, String targetData)
     {
+        StringGameProcessing stringGameProcessing = new StringGameProcessing();
         TryResult result;
         do
         {
-            result = player.tryGuess(source, targetData);
+            result = stringGameProcessing.tryGuess(source, targetData);
             switch (result)
             {
                 case SUCCESS:
@@ -36,9 +35,7 @@ public class StringGame implements Game<String>
                 case TOO_LOW:
                     System.out.println("Неправильная строка. Попробуйте снова.");
                     break;
-
             }
         } while (result != TryResult.SUCCESS);
     }
-
 }

@@ -1,7 +1,7 @@
 package Game;
 
 import Enums.TryResult;
-import Player.*;
+import GameProcessing.NumberGameProcessing;
 import Source.*;
 
 public class NumberGame implements Game<Integer>
@@ -20,12 +20,13 @@ public class NumberGame implements Game<Integer>
     }
 
     @Override
-    public void play(Player player, Source<Integer> source, Integer targetData)
+    public void play(Source<Integer> source, Integer targetData)
     {
+        NumberGameProcessing numberGameProcessing = new NumberGameProcessing();
         TryResult result;
         do
         {
-            result = player.tryGuess(source, targetData);
+            result = numberGameProcessing.tryGuess(source, targetData);
             switch (result)
             {
                 case SUCCESS:

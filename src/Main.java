@@ -19,20 +19,20 @@ public class Main
         {
             NumberGame game = new NumberGame();
             ConsoleSource<Integer> consoleSource = new ConsoleSource<Integer>();
-            HumanPlayer<Integer> player = new HumanPlayer<Integer>(name);
+            HumanPlayer player = new HumanPlayer(name);
 
             System.out.println("Добро пожаловать в игру 'Угадай число', " + player.getName());
-            game.play(player, consoleSource, game.getGameData());
+            game.play(consoleSource, game.getGameData());
 
         }
         else if (choice == 2)
         {
             StringGame game = new StringGame(5);
             ConsoleSource<String> consoleSource = new ConsoleSource<String>();
-            HumanPlayer<String> player = new HumanPlayer<String>(name);
+            HumanPlayer player = new HumanPlayer(name);
 
             System.out.println("Добро пожаловать в игру 'Угадай строку', " + player.getName());
-            game.play(player, consoleSource, game.getGameData());
+            game.play(consoleSource, game.getGameData());
         }
         else
         {
